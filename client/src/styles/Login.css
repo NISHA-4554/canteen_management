@@ -1,0 +1,214 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#FFF8E7,#FFE0B2,#FFD180);
+    min-height:100vh;
+}
+
+/* ===========================
+        LOGIN CONTAINER
+=========================== */
+
+.login-container{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+/* ===========================
+        LOGIN CARD
+=========================== */
+
+.login-card{
+    width:420px;
+    background:#fff;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+    animation:fadeIn .6s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===========================
+          HEADINGS
+=========================== */
+
+.logo{
+    text-align:center;
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.login-card h1{
+    text-align:center;
+    color:#D62828;
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#777;
+    margin-bottom:30px;
+    font-size:15px;
+}
+
+/* ===========================
+        INPUT BOXES
+=========================== */
+
+.input-box{
+    display:flex;
+    align-items:center;
+    border:2px solid #f0f0f0;
+    border-radius:12px;
+    padding:14px;
+    margin-bottom:20px;
+    transition:.3s;
+}
+
+.input-box:hover{
+    border-color:#F77F00;
+}
+
+.input-box:focus-within{
+    border-color:#E63946;
+    box-shadow:0 0 10px rgba(230,57,70,.2);
+}
+
+.input-box svg{
+    color:#F77F00;
+    font-size:18px;
+}
+
+.input-box input{
+    border:none;
+    outline:none;
+    width:100%;
+    margin-left:12px;
+    font-size:15px;
+    background:none;
+}
+
+/* ===========================
+      SHOW PASSWORD ICON
+=========================== */
+
+.eye-icon{
+    cursor:pointer;
+    color:#666;
+}
+
+.eye-icon:hover{
+    color:#D62828;
+}
+
+/* ===========================
+          BUTTON
+=========================== */
+
+.login-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#E63946;
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    background:#C1121F;
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(230,57,70,.35);
+}
+
+/* ===========================
+        REGISTER TEXT
+=========================== */
+
+.bottom-text{
+    text-align:center;
+    margin-top:25px;
+    color:#555;
+    font-size:15px;
+}
+
+.bottom-text a{
+    color:#E63946;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.bottom-text a:hover{
+    text-decoration:underline;
+}
+
+/* ===========================
+      FORGOT PASSWORD
+=========================== */
+
+.forgot{
+    text-align:right;
+    margin-top:-8px;
+    margin-bottom:18px;
+}
+
+.forgot a{
+    text-decoration:none;
+    color:#F77F00;
+    font-size:14px;
+}
+
+.forgot a:hover{
+    color:#D62828;
+}
+
+/* ===========================
+        RESPONSIVE
+=========================== */
+
+@media(max-width:500px){
+
+.login-card{
+    width:100%;
+    padding:30px;
+}
+
+.logo{
+    font-size:45px;
+}
+
+.login-card h1{
+    font-size:24px;
+}
+
+.subtitle{
+    font-size:14px;
+}
+
+}

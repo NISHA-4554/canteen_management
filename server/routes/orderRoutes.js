@@ -11,11 +11,11 @@ const {
 const protect = require("../middleware/authMiddleware");
 const adminOnly = require("../middleware/adminMiddleware");
 
-// Student Routes
+// Student
 router.post("/", protect, placeOrder);
-router.get("/my", protect, getMyOrders);
+router.get("/my-orders", protect, getMyOrders);
 
-// Admin Routes
+// Admin
 router.get("/", protect, adminOnly, getAllOrders);
 router.put("/:id", protect, adminOnly, updateOrderStatus);
 

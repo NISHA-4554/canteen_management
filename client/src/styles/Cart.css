@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#FFF8F0;
+}
+
+.cart-page{
+    width:90%;
+    margin:40px auto;
+}
+
+.cart-page h1{
+    color:#D62828;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+/* =======================
+      CART ITEM
+======================= */
+
+.cart-item{
+    background:white;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.cart-item img{
+    width:130px;
+    height:130px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.cart-details{
+    flex:1;
+}
+
+.cart-details h2{
+    color:#D62828;
+    margin-bottom:10px;
+}
+
+.cart-details p{
+    color:#666;
+    margin-bottom:10px;
+}
+
+.cart-details h3{
+    color:#F77F00;
+}
+
+/* =======================
+      QUANTITY
+======================= */
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.quantity button{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:#F77F00;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.quantity button:hover{
+    background:#D62828;
+}
+
+.quantity span{
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* =======================
+      DELETE BUTTON
+======================= */
+
+.delete{
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:#D62828;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.delete:hover{
+    background:#B71C1C;
+}
+
+/* =======================
+      FOOTER
+======================= */
+
+.cart-footer{
+    margin-top:30px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.cart-footer h2{
+    color:#D62828;
+}
+
+.checkout-btn{
+    background:#F77F00;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.checkout-btn:hover{
+    background:#D62828;
+}
+
+/* =======================
+      RESPONSIVE
+======================= */
+
+@media(max-width:768px){
+
+.cart-item{
+    flex-direction:column;
+    text-align:center;
+}
+
+.cart-footer{
+    flex-direction:column;
+    gap:20px;
+}
+
+.quantity{
+    justify-content:center;
+}
+
+}

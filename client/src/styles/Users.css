@@ -1,0 +1,21 @@
+.users-page{
+    padding:30px;
+}
+
+.users-page table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+.users-page th{
+    background:#ff7043;
+    color:white;
+}
+
+.users-page th,
+.users-page td{
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:center;
+}

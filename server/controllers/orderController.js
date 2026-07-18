@@ -4,17 +4,15 @@ const Food = require("../models/Food");
 // Place Order
 const placeOrder = async (req, res) => {
   try {
-    const { foodId, quantity } = req.body;
+    const { foodId, quantity, tableNumber } = req.body;
 
-    // Check required fields
-    if (!foodId || !quantity) {
+    if (!foodId || !quantity || !tableNumber) {
       return res.status(400).json({
         success: false,
-        message: "Food ID and quantity are required",
+        message: "Please fill all required fields",
       });
     }
 
-    // Check if food exists
     const food = await Food.findById(foodId);
 
     if (!food) {
@@ -24,15 +22,14 @@ const placeOrder = async (req, res) => {
       });
     }
 
-    // Calculate total price
     const totalPrice = food.price * quantity;
 
-    // Create order
     const order = await Order.create({
       user: req.user.id,
       food: foodId,
       quantity,
       totalPrice,
+      tableNumber,
     });
 
     res.status(201).json({

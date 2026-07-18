@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const upload = require("../middleware/upload");
 
 const {
   addFood,
@@ -13,8 +14,20 @@ const protect = require("../middleware/authMiddleware");
 const adminOnly = require("../middleware/adminMiddleware");
 
 // Admin Routes
-router.post("/", protect, adminOnly, addFood);
-router.put("/:id", protect, adminOnly, updateFood);
+router.post(
+  "/",
+  protect,
+  adminOnly,
+  upload.single("image"),
+  addFood
+);
+router.put(
+  "/:id",
+  protect,
+  adminOnly,
+  upload.single("image"),
+  updateFood
+);
 router.delete("/:id", protect, adminOnly, deleteFood);
 
 // Student Routes

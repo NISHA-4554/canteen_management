@@ -1,9 +1,10 @@
 const Food = require("../models/Food");
 
 // Add Food
+// Add Food
 const addFood = async (req, res) => {
   try {
-    const { name, description, price, category, image } = req.body;
+    const { name, description, price, category } = req.body;
 
     if (!name || !description || !price || !category) {
       return res.status(400).json({
@@ -11,6 +12,8 @@ const addFood = async (req, res) => {
         message: "Please fill all required fields",
       });
     }
+
+    const image = req.file ? req.file.path : "";
 
     const food = await Food.create({
       name,
@@ -25,7 +28,6 @@ const addFood = async (req, res) => {
       message: "Food Added Successfully",
       food,
     });
-
   } catch (error) {
     console.error(error);
 
@@ -57,18 +59,26 @@ const getAllFoods = async (req, res) => {
 };
 
 // Update Food
+// Update Food
 const updateFood = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const food = await Food.findByIdAndUpdate(
-      id,
-      req.body,
-      {
-        new: true,
-        runValidators: true,
-      }
-    );
+    const updateData = {
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      category: req.body.category,
+    };
+
+    if (req.file) {
+      updateData.image = req.file.path;
+    }
+
+    const food = await Food.findByIdAndUpdate(id, updateData, {
+      new: true,
+      runValidators: true,
+    });
 
     if (!food) {
       return res.status(404).json({
