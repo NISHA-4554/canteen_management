@@ -98,7 +98,7 @@ function AdminDashboard() {
           </div>
         </div>
 
-        {/* Recent Orders */}
+        {/* Recent Orders
         <div className="recent-orders">
           <h2>Recent Orders</h2>
 
@@ -153,7 +153,7 @@ function AdminDashboard() {
               )}
             </tbody>
           </table>
-        </div>
+        </div> */}
 
         <div className="chart-section">
     <h2>Order Status</h2>
